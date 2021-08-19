@@ -1,0 +1,80 @@
+## notes-virtual-machine-setup.txt
+## 2018-11-24 13:13:03
+#   MAC Address:" -> 080027E08C8D
+
+##### Run 'virtualbox' on Host
+# virtualbox
+# (see home screen "Oracle VM VirtualBox Manager")
+# No virtual machines in list. NO LinuxISO has been installed yet.
+
+#
+# Configure ONCE *before* installing 1st LinuxISO virtual machine.
+#
+
+##### Configure where to install all LinuxISO virtual machines
+#   <Machine><Settings><General>
+#	Change "Defalut Machine Folder"
+#   from:	"/home/robertbc/VirtualBox VMs" (Bad default with a space in the file name!)
+#   to:		"/home/robertbc/virtualbox_data"
+
+##### Configure *first* linux machine: name, ram, disk.
+# <New>
+# (see pop-up "Create Virtual Machine")
+#	"Name:"			== vm-base
+#   "Type:"			-> linux
+#   "Version:"		-> Ubuntu (64-bit)
+#   "Memory size"	-> 4096 MB
+# <Create>
+#	(see pop-up "Create Virtual Hard Disk")
+#   "File size" -> 30 GB
+# <Create>
+# (see home screen "Oracle VN VirtualBox Manager")
+# (see 1st virtual machine in left list "vm-base @ Powered Off)
+# NO LinuxISO has been installed yet.
+
+##### Configure this new specific VM *before* installing linix iso.
+# Select "vm-base" (only) virtual machine in list.
+# <Settings> <General> <Advanced>  "Shared Clipboard" & "Drag'n'Drop" -> Bidirectional
+
+# <Settings> <System> <Processor>  "Processors" -> 4 (max)
+
+# <Settings> <System> <Dispaly>  "Video Memory" -> 128 MB (max)
+# <Settings> <System> <Dispaly>  "Monitor Count" -> 2
+# <Settings> <System> <Dispaly>  "Acceleration" -> Enable 3D
+
+# <Settings> <System> <Network>  <Adapter 1> "Attached to:" -> Bridged Adapter
+# <Settings> <System> <Network>  <Adapter 1> <Advanced> "Adapter Type:" -> Paravirtualized Network (virtio-net)
+# <Settings> <System> <Network>  <Adapter 1> <Advanced> "MAC Address:" -> 080027E08C8D
+
+# <Settings> <System> <USB>  <USB 3.0 (xHCI) Controller> Enabled
+# <Note "USB Device Filters" set when VM running and desired usb device plugged in
+
+# <Ok>
+# (see home screen "Oracle VN VirtualBox Manager")
+# (see 1st virtual machine "vm-base" in list @ Powered Off)
+# NO LinuxISO has been installed yet.
+
+##### Installing & running 1st linux iso.
+# Select "vm-base" (only) virtual machine in list.
+# <Start> <Normal Start> >> "Select start-up disk" pop-up.
+# 	Browse to find and open linux iso.
+# <Start>
+#   Standard linux install live image displayed. Install Linux as normal.
+#   Enable "Log in automatically" in "Install, Who are you?"
+# Don't forget to eject the linix iso if you reboot into live image.
+
+
+for nemo thunar -B
+
+
+
+
+
+
+
+
+
+
+
+
+
